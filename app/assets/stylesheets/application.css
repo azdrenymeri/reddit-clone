@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .nav-user-icon {
+    border-radius: 4px;
+    margin: 5px;
+    height: 36px;
+    width: 36px;
+
+ }

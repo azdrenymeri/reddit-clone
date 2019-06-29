@@ -4,6 +4,10 @@
   </div>
 
   <% if user_signed_in? %>
+    <% if current_user.picture.attached? %>
+      <%= image_tag current_user.picture ,class:"nav-user-icon"%>
+    <% end %>
+
     <%= link_to current_user.full_name,users_path(current_user),class:"item" %>
     <%= link_to "Sign out",destroy_user_session_path,method:"DELETE",class:"item" %>
   <% else %>
