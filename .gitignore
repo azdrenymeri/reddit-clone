@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-
+reddit-clone-diagram.dia
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

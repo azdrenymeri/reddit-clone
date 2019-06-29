@@ -1,0 +1,13 @@
+<div class="ui stackable menu">
+  <div class="item">
+    <%= image_tag("reddit.png", :alt => "logo") %>
+  </div>
+
+  <% if user_signed_in? %>
+    <%= link_to current_user.full_name,users_path(current_user),class:"item" %>
+    <%= link_to "Sign out",destroy_user_session_path,method:"DELETE",class:"item" %>
+  <% else %>
+    <%= link_to "Sign in",  new_user_session_path,class:"item" %>
+    <%= link_to "Sign up",  new_user_registration_path,class:"item" %>
+  <% end %>
+</div>

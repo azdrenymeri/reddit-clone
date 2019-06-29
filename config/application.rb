@@ -29,5 +29,6 @@ module RedditClone
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.generators.javascript_engine = :js
   end
 end
