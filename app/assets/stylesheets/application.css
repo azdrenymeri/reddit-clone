@@ -19,5 +19,12 @@
     margin: 5px;
     height: 36px;
     width: 36px;
-
  }
+.main-container {
+   margin-top: 3%;
+}
+.center {
+   margin: auto;
+   width: 50%;
+   padding: 10px;
+}

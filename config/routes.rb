@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, skip: :all
   resources :posts
   resources :users
+  get '/wellcome', to: 'static_pages#index',as: "static_pages_wellcome"
+  get '/about', to: 'static_pages#about',as: "static_pages_about"
+
 end

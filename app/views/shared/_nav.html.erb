@@ -1,17 +1,77 @@
-<div class="ui stackable menu">
-  <div class="item">
-    <%= image_tag("reddit.png", :alt => "logo") %>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <%= image_tag("reddit.png", :alt => "logo") %>
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
 
-  <% if user_signed_in? %>
-    <% if current_user.picture.attached? %>
+  <div id="navbarBasicExample" class="navbar-menu">
+    
+    <% if user_signed_in? %>
+    <div class="navbar-end">
+
+        <% if current_user.picture.attached? %>
       <%= image_tag current_user.picture ,class:"nav-user-icon"%>
     <% end %>
 
-    <%= link_to current_user.full_name,users_path(current_user),class:"item" %>
-    <%= link_to "Sign out",destroy_user_session_path,method:"DELETE",class:"item" %>
-  <% else %>
-    <%= link_to "Sign in",  new_user_session_path,class:"item" %>
-    <%= link_to "Sign up",  new_user_registration_path,class:"item" %>
-  <% end %>
-</div>
+    <%= link_to current_user.full_name,users_path(current_user),class:"navbar-item" %>
+    <%= link_to "Sign out",destroy_user_session_path,method:"DELETE",class:"navbar-item" %>
+     
+
+    </div>
+    <% else %>
+     <div class="navbar-start">
+      
+      <div class="navbar-item">
+      <%= link_to static_pages_wellcome_path do %>
+      <span>
+       <i class="fas fa-home"></i> &nbsp;
+        Home
+      </span>
+      <% end %>      
+      </div>
+      <div class="navbar-item"> 
+      <%= link_to static_pages_about_path do %>
+      <span>
+        <i class="fas fa-question-circle"></i>  &nbsp;
+        About
+       </span>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+        <%= link_to  new_user_session_path do %>
+          <span class="button is-primary"> 
+              Sign in &nbsp;
+            <i class="fas fa-sign-in-alt"></i>
+          </span>
+        <% end %>
+        &nbsp; &nbsp; 
+        <%= link_to   new_user_registration_path do %>
+
+          <span class="button is-light">
+          Sign up &nbsp;
+          <i class="fas fa-user-plus"></i>
+          </span>
+        <% end %>
+        </div>
+      </div>
+    </div>
+      
+    <% end %>
+    
+   
+
+
+
+  </div>
+</nav>
