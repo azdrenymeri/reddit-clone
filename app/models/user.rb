@@ -8,4 +8,7 @@ class User < ApplicationRecord
   validates :bio, presence: true,length: {minimum:5 , maximum: 400}
   validates :birth_date, presence: true
   validates :picture, presence: true
+
+  has_many :sub_reddits
+  has_many :comments
 end
