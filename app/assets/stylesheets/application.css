@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ .navbar-mod {
+   box-shadow: 0px 0px 1px 1px #ccc;
+   margin-bottom: 16px;
+ }
 
  .nav-user-icon {
     border-radius: 4px;
@@ -27,4 +31,17 @@
    margin: auto;
    width: 50%;
    padding: 10px;
+}
+
+/* flash properties */
+.is-notice{
+   background-color: #23d160;
+   color: #fff;
+}
+.is-alert{
+   background-color: #ff3860;
+    color: #fff;
+}
+.notif-mod {
+
 }

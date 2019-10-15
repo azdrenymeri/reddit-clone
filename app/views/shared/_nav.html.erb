@@ -1,6 +1,6 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-light navbar-mod" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="#">
+    <a class="navbar-item" href=<%=root_url%> >
       <%= image_tag("reddit.png", :alt => "logo") %>
     </a>
 
@@ -17,13 +17,14 @@
     <div class="navbar-end">
 
         <% if current_user.picture.attached? %>
+        <a href=<%=edit_user_registration_url %> >
       <%= image_tag current_user.picture ,class:"nav-user-icon"%>
+      </a>
     <% end %>
 
-    <%= link_to current_user.full_name,users_path(current_user),class:"navbar-item" %>
-    <%= link_to "Sign out",destroy_user_session_path,method:"DELETE",class:"navbar-item" %>
+    <%= link_to current_user.full_name, edit_user_registration_path, class:"navbar-item" %>
+    <%= link_to "Sign out", destroy_user_session_path,method:"DELETE",class:"navbar-item" %>
      
-
     </div>
     <% else %>
      <div class="navbar-start">
