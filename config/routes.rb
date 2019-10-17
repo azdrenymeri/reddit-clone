@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'sub_reddits/index'
   root to: 'static_pages#index'
   get '/wellcome', to: 'static_pages#index', as: 'static_pages_wellcome'
   get '/about', to: 'static_pages#about', as: 'static_pages_about'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :sub_reddits
   resources :posts
   resources :users
 end
