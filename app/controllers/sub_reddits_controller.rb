@@ -10,6 +10,10 @@ class SubRedditsController < ApplicationController
     @sub_reddit = SubReddit.new
   end
 
+  def show
+    @sub_reddit = SubReddit.find(params[:id])
+  end
+
   def create
     @sub_reddit = SubReddit.new(sub_reddit_params)
     @sub_reddit.user = current_user
