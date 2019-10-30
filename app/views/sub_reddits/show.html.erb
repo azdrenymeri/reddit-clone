@@ -1,19 +1,55 @@
-<section class="hero is-medium is-info is-bold hero-mod">
+<section class="hero is-info hero-mod">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
         <%= @sub_reddit.title %>
-      </h1>
-      <h2 class="subtitle">
-        <%= @sub_reddit.description %>
-      </h2>
+      </h1> 
+    </div>
+     
+  </div>
+ 
+</section>
+<div class="columns columns-mod">
+    <div class="column is-1"></div>
+    <div class="column is-9">
+        <!-- Posts section -->
+        <% @sub_reddit.posts.each do |post| %>
+            <div class="card sub-reddit-item">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="image not found">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4"> <%= post.title %></p>
+        <p class="subtitle is-6"><%= post.content %></p>
+      </div>
     </div>
   </div>
-</section>
-<div class="columns">
-    <div class="column is-1"></div>
-    <div class="column is-10">
-        <!-- Comments section -->
+</div>
+        <% end %>
+          
     </div>
-    <div class="column is-2"></div>
+    <div class="column is-3">
+        <!-- Description section -->
+
+<article class="message is-info">
+  <div class="message-header">
+    <p> <%= @sub_reddit.title %></p>
+  </div>
+  <div class="message-body">
+    <%= @sub_reddit.description %>
+    <div class="level"> 
+      <div class="level-left"> 
+        <div class="level-item"> 
+          <%= link_to "Create Post", new_sub_reddit_post_path(@sub_reddit), class:'button is-warning' %>
+        </div>
+       </div>
+      <div class="level-right">  </div>
+    </div>
+  </div>
+</article>
+    </div>
 </div>

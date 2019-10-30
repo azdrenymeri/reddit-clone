@@ -12,9 +12,17 @@
   box-shadow: 0 .1px .1px rgba(5,5,5,.1), 0 0 0 1px rgba(5,5,5,.1);
 }
 .hero-mod {
-  position: fixed;
-  left: 0;
-  top: 57px;
-  right: 0;
-  width: 100%;
+  position: relative;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: -34px;
+    width: 100rem;
+    left: -10%;
+    right: -10%;
+}
+
+.columns-mod {
+  margin-top: -1.75rem;
 }

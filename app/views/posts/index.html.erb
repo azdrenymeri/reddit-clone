@@ -1,1 +1,9 @@
-<h1> This is posts page </h1>
+<div class="columns">
+<div class="column is-1"></div>
+<div class="column is-9">
+    <% @posts.each do |post| %>
+      <%= post.title %>
+    <% end %>
+</div>
+<div class="column is-2"></div>
+</div>

@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :sub_reddits
-  resources :posts
+
+  resources :sub_reddits do
+     resources :posts
+  end
+  
   resources :users
 end
