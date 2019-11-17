@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="columns">
+    <div class="column is-9">
+      <article class="message is-primary">
+        <div class="message-header">
+          <p><%= @post.title %></p>
+        </div>
+        <div class="message-body">
+          <%= @post.content %>
+        </div>
+      </article>
+      <hr/>
+      <%= render 'shared/comment_form' %>
+      <hr />
+      <% @post.comments.each do |comment| %>
+        <article class="message message-margin">
+          <div class="message-body bottom-border">
+            <%= comment.content %>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</div>

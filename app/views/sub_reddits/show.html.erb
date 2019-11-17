@@ -14,6 +14,7 @@
     <div class="column is-9">
         <!-- Posts section -->
         <% @sub_reddit.posts.each do |post| %>
+        <%= link_to(sub_reddit_post_path(id:post.id, sub_reddit_id: @sub_reddit.id)) do %>
             <div class="card sub-reddit-item">
   <div class="card-content">
     <div class="media">
@@ -29,6 +30,7 @@
     </div>
   </div>
 </div>
+        <% end %>
         <% end %>
           
     </div>

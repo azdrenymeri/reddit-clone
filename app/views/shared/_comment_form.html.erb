@@ -1,0 +1,11 @@
+<%= form_for @comment,url: sub_reddit_post_comments_path(post_id: params[:id]), method: 'post' do |f| %>
+  <div class="field">
+    <div class="control">
+      <%= f.label :content,'Comment' ,class: 'label'%>
+      <%= f.text_area :content,
+                class: 'textarea is-primary', 
+                placeholder: 'Write a comment' %>
+    </div>
+  </div>
+  <%= f.submit class:"button is-primary"%>
+<% end %>
