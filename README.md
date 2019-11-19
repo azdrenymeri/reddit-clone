@@ -6,6 +6,14 @@
 * BackEnd: Ruby on Rails
 * Database: PostgreSQL
 
+### Some Of The Features
+* Login
+* Signup
+* Create a subreddit
+* Post on a subreddit
+* Comment on a post
+* New features comming soon
+
 ### How to run the app
 1. `bundle install`
 2. set your username and password on the `database.yml` bassed on your PostgreSQL
