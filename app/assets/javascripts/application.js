@@ -15,22 +15,29 @@
 //= require turbolinks
 //= require_tree .
 
-document.addEventListener('DOMContentLoaded', function () {
-// notification close code
-  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-      $notification = $delete.parentNode;
-      $delete.addEventListener('click', function() {
-        $notification.parentNode.removeChild($notification);
-      });
-    });
+document.addEventListener('DOMContentLoaded', () => {
 
-// signup code for showing the uploaded profile picture name
-    const fileInput = document.querySelector('#user_picture');
-fileInput.onchange = () => {
-  if (fileInput.files.length > 0) {
-    const fileName = document.querySelector('.file-name');
-    fileName.textContent = fileInput.files[0].name;
+  // notification close code
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    $notification = $delete.parentNode;
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+
+
+  // signup code for showing the uploaded profile picture name
+  const fileInput = document.querySelector('#user_picture');
+  if (fileInput) {
+    fileInput.onchange = () => {
+  
+      if (fileInput.files.length > 0) {
+        const fileName = document.querySelector('.file-name');
+        fileName.textContent = fileInput.files[0].name;
+      }
+    }
+    
   }
-}
+  
 });
 
