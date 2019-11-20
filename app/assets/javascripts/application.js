@@ -15,11 +15,11 @@
 //= require turbolinks
 //= require_tree .
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
 // notification close code
   (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
       $notification = $delete.parentNode;
-      $delete.addEventListener('click', () => {
+      $delete.addEventListener('click', function() {
         $notification.parentNode.removeChild($notification);
       });
     });
