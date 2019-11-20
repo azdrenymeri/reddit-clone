@@ -21,4 +21,4 @@
 4. `rails s`
 
 ### Live Version
-~~Live~~
+[Live](https://justreadit.herokuapp.com/)
