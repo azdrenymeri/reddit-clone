@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+ @import "bulma";
  .navbar-mod {
    box-shadow: 0px 0px 1px 1px #ccc;
    margin-bottom: 16px;
@@ -42,4 +42,7 @@
 .is-alert{
    background-color: #ff3860;
    color: #fff;
+}
+.hidden {
+   display: none;
 }

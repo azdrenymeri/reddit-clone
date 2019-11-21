@@ -15,9 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  // notification close code
   (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
     $notification = $delete.parentNode;
     $delete.addEventListener('click', () => {
@@ -25,19 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  // signup code for showing the uploaded profile picture name
-  const fileInput = document.querySelector('#user_picture');
-  if (fileInput) {
-    fileInput.onchange = () => {
-  
-      if (fileInput.files.length > 0) {
-        const fileName = document.querySelector('.file-name');
-        fileName.textContent = fileInput.files[0].name;
-      }
-    }
-    
-  }
-  
+  var burger = document.querySelector('.burger');
+  var nav = document.querySelector('#'+burger.dataset.target);
+ 
+  burger.addEventListener('click', function(){
+    burger.classList.toggle('is-active');
+    nav.classList.toggle('is-active');
+  });
 });
 
