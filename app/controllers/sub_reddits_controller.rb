@@ -13,6 +13,10 @@ class SubRedditsController < ApplicationController
   def show
     @sub_reddit = SubReddit.find(params[:id])
   end
+  def edit
+    @sub_reddit = SubReddit.find(params[:id])
+    
+  end
 
   def create
     @sub_reddit = SubReddit.new(sub_reddit_params)

@@ -7,6 +7,14 @@
     </div>
      
   </div>
+  <% if @sub_reddit.user_id == current_user.id %>
+      <div clas="hero-foot">
+      <div class="container"> 
+      <%= link_to 'Edit', edit_sub_reddit_path(@sub_reddit), class:'button is-primary' %>
+      </div>
+      </div>
+  <% end %>
+
  
 </section>
 <div class="columns columns-mod">
