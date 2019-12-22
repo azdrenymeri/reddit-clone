@@ -14,10 +14,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass', '~> 5.11.2'
 # User jquery for frontEnd
 gem 'jquery-rails'
+# popper and bootstrap for the design
+gem 'popper_js', '~> 1.14.5'
+gem 'bootstrap', '~> 4.4.1'
 
-gem "bulma-rails", "~> 0.8.0"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?

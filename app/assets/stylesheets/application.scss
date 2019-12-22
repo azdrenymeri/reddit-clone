@@ -12,10 +12,11 @@
  *
  *= require_tree .
  *= require_self
+
  */
  @import "font-awesome-sprockets";
  @import "font-awesome";
- @import "bulma";
+ @import "bootstrap";
  
  .navbar-mod {
    box-shadow: 0px 0px 1px 1px #ccc;
