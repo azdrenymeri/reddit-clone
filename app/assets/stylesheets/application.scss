@@ -17,27 +17,40 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "bootstrap";
- 
- .navbar-mod {
-   box-shadow: 0px 0px 1px 1px #ccc;
-   margin-bottom: 16px;
- }
 
+
+//  Sizing properties
+.w-10 {
+    width: 10% !important;
+}
+.w-15 {
+   width: 15% !important;
+}
+.w-20 {
+    width: 20% !important;
+}
+
+
+// navbar modifications
+.subredit-dropdown {
+background-color: #f8f9fa;
+border: 1px solid #f8f9fa;
+float: clear;
+}
+.subredit-dropdown:focus {
+   background-color: white;
+   border: 1px solid #ced4da;
+   border-radius: 0.25rem;
+}
+.subredit-dropdown:hover {
+   border-radius: 0.25rem;
+   border: 1px solid #ced4da;
+}
  .nav-user-icon {
-    border-radius: 4px;
-    margin: 5px;
-    height: 36px;
-    width: 36px;
+    border-radius: 30px;
+    height: 30px;
+    width: 30px;
  }
-.main-container {
-   margin-top: 3%;
-}
-.center {
-   margin: auto;
-   width: 50%;
-   padding: 10px;
-}
-
 /* flash properties */
 .is-notice{
    background-color: #23d160;

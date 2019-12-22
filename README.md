@@ -2,9 +2,10 @@
 #### This is a simple web app clone of the famous website reddit.com
 
 ### Technologies used
-* FrontEnd: jQuery, Bulma, FontAwesome
+* FrontEnd: jQuery, Boostrap, FontAwesome
 * BackEnd: Ruby on Rails
 * Database: PostgreSQL
+
 
 ### Some Of The Features
 * Login

@@ -1,79 +1,100 @@
-<nav class="navbar is-light navbar-mod" role="navigation" aria-label="main navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;" >
   
-  <div class="navbar-brand">
-    <a class="navbar-item" href=<%=root_url%> >
-      <%= image_tag("reddit.png", :alt => "logo") %>
+    <a class="navbar-brand" href=<%= static_pages_wellcome_path %> >
+      <%= image_tag("reddit.png", :alt => "logo", :width => '30', :height => '30', :class => 'd-inline-block align-top') %>
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <% if user_signed_in? %>
+  <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle subredit-dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class="fas fa-home"></i> Home
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item dropdown-header" href="#"><i class="fas fa-home"></i> Home</a>
+          <a class="dropdown-item" href="#">SubReddit </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">SubReddit </a>
+          <a class="dropdown-item" href="#">SubReddit </a>
+          <a class="dropdown-item" href="#">SubReddit </a>
+          <a class="dropdown-item" href="#">SubReddit </a>
 
-    <!-- Mobile navbar -->
-    <a role="button" id="burger" class="navbar-burger burger" data-target="navMenu">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+        </div>
+      </li>
+  </ul>
 
-  </div>
-
-
-  <div id="navMenu" class="navbar-menu">
     
-    <% if user_signed_in? %>
-    <div class="navbar-end">
+    <form class="form-inline mr-auto w-50">
+      <input class="form-control mr-sm-2 w-100 p-3" type="search" placeholder="Search" aria-label="Search">
+    </form>
 
-        <% if current_user.picture.attached? %>
-        <a href=<%=edit_user_registration_url %> >
-      <%= image_tag current_user.picture ,class:"nav-user-icon"%>
-      </a>
-    <% end %>
+    <ul class="navbar-nav">
+      <% if current_user.picture.attached? %>
+      <li class="nav-item dropdown">
+         <a href=<%=edit_user_registration_url %> class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+           <%= image_tag current_user.picture ,class:"nav-user-icon"%>
+           <%= current_user.full_name %>
+         </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to edit_user_registration_path, class:"dropdown-item" do  %>
+           <i class="fas fa-user-circle"></i> Profile 
+          <% end %>
+          <%= link_to new_sub_reddit_path,class:"dropdown-item" do %>
+          <i class="fab fa-reddit-alien"></i> Create a SubReddit
+          <% end %>
+          <div class="dropdown-divider"></div>
+          <%= link_to destroy_user_session_path,method:"DELETE",class:"dropdown-item" do %>
+          <i class="fas fa-sign-out-alt"></i> Sign Out
+          <% end %>
+        </div>
+      </li>
 
-    <%= link_to current_user.full_name, edit_user_registration_path, class:"navbar-item" %>
-    <%= link_to "Create a SubReddit", new_sub_reddit_path,class:"navbar-item" %>
-    <%= link_to "Sign out", destroy_user_session_path,method:"DELETE",class:"navbar-item" %>
-     
-    </div>
-    <% else %>
-     <div class="navbar-start">
-      
-      <div class="navbar-item">
-      <%= link_to static_pages_wellcome_path do %>
-      <span>
-       <i class="fas fa-home"></i> &nbsp;
+       <% end %>
+    </ul>
+
+  <% else %>
+     <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      <%= link_to static_pages_wellcome_path, class:'nav-link' do  %>
+        <span>
+       <i class="fas fa-home"></i> 
         Home
       </span>
-      <% end %>      
-      </div>
-      <div class="navbar-item"> 
-      <%= link_to static_pages_about_path do %>
+      <% end %>
+      </li>
+      <li class="nav-item">
+
+        <%= link_to static_pages_about_path, class:'nav-link' do %>
       <span>
         <i class="fas fa-question-circle"></i>  &nbsp;
         About
        </span>
       <% end %>
-      </div>
-    </div>
+      </li>
+    </ul>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-        <%= link_to  new_user_session_path do %>
-          <span class="button is-primary"> 
-              Sign in &nbsp;
+    <ul class="navbar-nav"> 
+      <li class="navbar-item">
+         <%= link_to new_user_session_path, class:'btn btn-outline-info' do %>
+              Sign in
             <i class="fas fa-sign-in-alt"></i>
-          </span>
         <% end %>
-        &nbsp; &nbsp; 
-        <%= link_to   new_user_registration_path do %>
-
-          <span class="button is-light">
-          Sign up &nbsp;
+      </li>
+      &nbsp;&nbsp;
+      <li class="navbar-item">
+        <%= link_to new_user_registration_path, class:'btn btn-secondary' do %>
+        Sign up
           <i class="fas fa-user-plus"></i>
-          </span>
+          
         <% end %>
-        </div>
-      </div>
-    </div>
-      
-    <% end %>
-    
+      </li>
+    </ul>
+  <% end %>
+
+ 
   </div>
 </nav>
