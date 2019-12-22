@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     get 'users/profile/:id', to: 'users#show', as: 'users_profile'
+    get 'users/sign_up/file', to:'registrations#file', as:'registrations_file'
   end
 
   resources :users
