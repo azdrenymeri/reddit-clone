@@ -1,0 +1,16 @@
+<div class="card m-1">
+        <div class="row no-gutters">
+            <div class="col-3">
+                <% if sub_reddit.background_picture.attached? %>
+                    <%= image_tag sub_reddit.background_picture, class:'card-img-top',width:'140',height:'140',alt:'subreddit picture' %>
+                <% end %>
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <h5 class="card-title"> <%= sub_reddit.title %> </h5>
+                    <p class="card-text"><%= sub_reddit.description %></p>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Join(comming soon)</a>
+                </div>
+            </div>
+        </div>
+</div>

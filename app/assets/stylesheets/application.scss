@@ -51,15 +51,41 @@ float: clear;
     height: 30px;
     width: 30px;
  }
+
 /* flash properties */
-.is-notice{
-   background-color: #23d160;
-   color: #fff;
+.alert-notice{
+   color: #155724;
+   background-color: #d4edda;
+   border-color: #c3e6cb;
 }
-.is-alert{
-   background-color: #ff3860;
-   color: #fff;
+.alert-alert{
+   color: #721c24;
+   background-color: #f8d7da;
+   border-color: #f5c6cb;
 }
 .hidden {
    display: none;
+}
+
+//  ServerSide error handling
+#error_explanation {
+   color: #721c24;
+   background-color: #f8d7da;
+   border-color: #f5c6cb;
+   position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+#error_explanation > h2 {
+   font-size: 1.3rem;
+}
+#error_explanation > ul {
+   padding:0;
+}
+#error_explanation > ul > li {
+   list-style-type: none;
+
 }

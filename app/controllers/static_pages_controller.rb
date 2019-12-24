@@ -5,6 +5,8 @@ class StaticPagesController < ApplicationController
             redirect_to root_path
         end
     end
+    
     def main
+        @sub_reddits = SubReddit.all
     end
 end

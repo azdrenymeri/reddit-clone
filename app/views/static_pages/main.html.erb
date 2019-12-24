@@ -1,1 +1,11 @@
-Wellcome
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm-10 m-3">
+        <% @sub_reddits.each do |sub_reddit | %>
+            <%= render partial:'shared/sub_reddit_card', locals: {sub_reddit:sub_reddit} %>
+        <% end %>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>

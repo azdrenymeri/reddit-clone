@@ -12,3 +12,10 @@ User.create(email: 'azdreny@gmail.com',
             full_name: 'Azdren Ymeri',
             bio: 'This is Azdren huh?',
             birth_date: Date.new(1997, 2, 2))
+
+User.create(email: 'john@example.com',
+            password: '123456',
+            full_name: 'John Doe',
+            bio: 'Hello and nice to meet you',
+            birth_date: Date.new(1990, 3, 3))
+
