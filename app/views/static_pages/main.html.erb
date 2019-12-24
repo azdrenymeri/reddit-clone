@@ -1,1 +1,4 @@
-Wellcome
+
+<% @sub_reddits.each do |sub_reddit| %>
+    <%= render partial:'shared/sub_reddit_card',object:sub_reddit %>
+<% end %>

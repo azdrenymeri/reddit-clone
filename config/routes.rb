@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   
   get '/wellcome', to: 'static_pages#index', as: 'static_pages_wellcome'
   get '/about', to: 'static_pages#about', as: 'static_pages_about'
-  get "/main", to:'static_pages#main', as:'main_page'
+  get '/main', to:'static_pages#main', as:'main_page'
 
   # User routes
   devise_for :users
