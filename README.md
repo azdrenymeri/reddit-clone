@@ -6,6 +6,8 @@
 * BackEnd: Ruby on Rails
 * Database: PostgreSQL
 
+### Tasks
+`rails data:re_create` Will drop,create,migrate and then seed the database
 
 ### Some Of The Features
 * Login

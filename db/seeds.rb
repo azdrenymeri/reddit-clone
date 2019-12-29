@@ -39,7 +39,6 @@ puts 'Running database seed'
 @user2.save()
 
 # Subreddits
-
 @programming_subreddit = SubReddit.new(
     user: @user1,
     title: 'Programming',
@@ -67,6 +66,5 @@ puts 'Running database seed'
 )
 
 @movies_subreddit.save()
-
 
 puts 'Done...'
