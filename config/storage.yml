@@ -1,12 +1,12 @@
-test:
+local:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
 
-local:
- service: Cloudinary
- cloud_name: <%= Rails.application.credentials.dig(:cloudinary, :cloud_name) %>
- api_key: <%= Rails.application.credentials.dig(:cloudinary, :api_key) %>
- api_secret: <%= Rails.application.credentials.dig(:cloudinary, :api_secret) %>
+production:
+  service: Cloudinary
+  cloud_name: <%= Rails.application.credentials.dig(:cloudinary, :cloud_name) %>
+  api_key: <%= Rails.application.credentials.dig(:cloudinary, :api_key) %>
+  api_secret: <%= Rails.application.credentials.dig(:cloudinary, :api_secret) %>
 
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
