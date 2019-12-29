@@ -1,65 +1,13 @@
-<section class="hero is-info hero-mod">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        <%= @sub_reddit.title %>
-      </h1> 
-    </div>
-     
-  </div>
-  <% if @sub_reddit.user_id == current_user.id %>
-      <div clas="hero-foot">
-      <div class="container"> 
-      <%= link_to 'Edit', edit_sub_reddit_path(@sub_reddit), class:'button is-primary' %>
-      </div>
-      </div>
-  <% end %>
-
- 
-</section>
-<div class="columns columns-mod">
-    <div class="column is-1"></div>
-    <div class="column is-9">
-        <!-- Posts section -->
-        <% @sub_reddit.posts.each do |post| %>
-        <%= link_to(sub_reddit_post_path(id:post.id, sub_reddit_id: @sub_reddit.id)) do %>
-            <div class="card sub-reddit-item">
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="image not found">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4"> <%= post.title %></p>
-        <p class="subtitle is-6"><%= post.content %></p>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="row m-3">
+        <div class="card">
+        <% if @sub_reddit.background_picture.attached? %>
+            <%= image_tag @sub_reddit.background_picture, class:'card-img-top h-25 no-stretch', alt:'subreddit picture' %>
         <% end %>
-        <% end %>
-          
-    </div>
-    <div class="column is-3">
-        <!-- Description section -->
+      <div class="card-body">
+        <h5 class="card-title"><%= @sub_reddit.title %></h5>
+        <p class="card-text"><%= @sub_reddit.description %></p>
 
-<article class="message is-info">
-  <div class="message-header">
-    <p> <%= @sub_reddit.title %></p>
-  </div>
-  <div class="message-body">
-    <%= @sub_reddit.description %>
-    <div class="level"> 
-      <div class="level-left"> 
-        <div class="level-item"> 
-          <%= link_to "Create Post", new_sub_reddit_post_path(@sub_reddit), class:'button is-warning' %>
-        </div>
-       </div>
-      <div class="level-right">  </div>
-    </div>
-  </div>
-</article>
+        <hr />
+      </div>
     </div>
 </div>
