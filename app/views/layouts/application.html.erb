@@ -15,9 +15,8 @@
     <%= render 'shared/nav' %>
     <div class="container">
       <% flash.each do |key, value| %>
-        <div class="notification is-<%= key %> notif-mod">
-        <button class="delete"></button>
-        <%= value %>
+      <div class="m-3 alert alert-secondary alert-<%= key %>" role="alert">
+            <%= value %>
         </div>
       <% end %>
     <div class="main-container">

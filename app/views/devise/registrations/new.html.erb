@@ -1,77 +1,64 @@
-<div class="columns is-mobile">
-  <div class="column is-3"> </div>
-  <div class="column is-6">
-      <h2 class="title is-2">Sign up</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name),class:"ui form")  do |f| %>
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    
+    <div class="col-sm">
+      <h2>Sign up</h2>    
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name),validate: true)  do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-      <div class="field">
-        <%= f.label :email,class:"label" %><br />
+      <div class="form-group">
+        <%= f.label :email %><br />
         <div class="control">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"input" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control" %>
         </div>
       </div>
-      <div class="field">
-        <%= f.label :password,class:"label"%>
+      <div class="form-group">
+        <%= f.label :password%>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
         <div class="control">
-          <%= f.password_field :password, autocomplete: "new-password",class:"input"%>
+          <%= f.password_field :password, autocomplete: "new-password",class:"form-control"%>
         </div>
       </div>
-      <div class="field">
-        <%= f.label :password_confirmation,class:"label" %>
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
         <div class="control">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"input" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control" %>
         </div>
       </div>
-      <div class="field">
-        <%= f.label :full_name,class:"label"%>
+      <div class="form-group">
+        <%= f.label :full_name%>
         <div class="control">
-          <%= f.text_field :full_name,class:"input" %>
+          <%= f.text_field :full_name,class:"form-control" %>
         </div>
       </div>
-      <div class="field">
-        <%= f.label :bio,class:"label"%>
+      <div class="form-group">
+        <%= f.label :bio %>
         <div class="control">
-          <%= f.text_field :bio,class:"input" %>
+          <%= f.text_field :bio,class:"form-control" %>
         </div>
       </div>
-      <div class="field">
-        <%= f.label :birth_date,class:"label"%>
+      <div class="form-group">
+        <%= f.label :birth_date %>
         <div class="control">
-          <%= f.date_field :birth_date,class:"input" %>
+          <%= f.date_field :birth_date,class:"form-control" %>
         </div>
       </div>
-      <label class="label">Profile picture </label>
-      <div class="file" >
-        <div class="file is-info has-name">
-          <%= f.label :picture,class:"file-label"  do %>
-            <div class="control">
-              <%= f.file_field :picture,class:"file-input" %>
-              <span class="file-cta">
-                <span class="file-icon">
-                  <i class="fas fa-upload"></i>
-                </span>
-                <span class="file-label">
-                  Choose a file…
-                </span>
-              </span>
-            </div>
-            <span class="file-name">
-            </span>
-          <% end %>
-        </div>
+      
+      <div class="custom-file" >
+        <%= f.file_field :picture,class:"custom-file-input" %>
+        <%= f.label :picture,'Choose your profile picture',class:"custom-file-label" %>
       </div>
-    <div class="field">
+    <div class="form-group">
       <br/>
-      <%= f.submit "Sign up",class:"button is-link", id:"picture" %>
+      <%= f.submit "Sign up",class:"btn btn-outline-primary", id:"picture" %>
     </div>
-    </div>
-
   <% end %>
-  <br/>
- 
-</div>
-<div class="column is-3"> </div>
-</div>
+    </div>
+    
+    <div class="col-sm">
+    </div>
+  </div>
+    
+

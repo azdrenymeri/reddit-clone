@@ -1,3 +1,20 @@
-<div>
-    <%= sub_reddit.title %>
+<div class="card m-1">
+        <div class="row no-gutters">
+            <div class="col-3">
+                <% if sub_reddit.background_picture.attached? %>
+                    <%= link_to sub_reddit_path(sub_reddit),class:'text-decoration-none' do %>
+                        <%= image_tag sub_reddit.background_picture, class:'card-img-top ',width:'140',height:'140',alt:'subreddit picture' %>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="col">
+                <div class="card-block px-2">
+                    <%= link_to sub_reddit_path(sub_reddit),class:'text-decoration-none' do %>
+                        <h5 class="text-decoration-none m-2"> <%= sub_reddit.title %> </h5>
+                    <% end %>
+                    <p class="card-text m-2"><%= sub_reddit.description %></p>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Join(comming soon)</a>
+                </div>
+            </div>
+        </div>
 </div>

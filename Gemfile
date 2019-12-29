@@ -18,6 +18,9 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
 gem 'bootstrap', '~> 4.4.1'
 
+# adding validation to the client side
+gem 'client_side_validations'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
