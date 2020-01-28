@@ -8,6 +8,7 @@
         <p class="card-text"><%= @sub_reddit.description %></p>
 
         <hr />
+        <%= render partial: 'shared/posts/post_form', object:@post %>
       </div>
     </div>
 </div>
