@@ -1,6 +1,6 @@
 ## Read It(Reddit Clone)
 #### This is a simple web app clone of the famous website reddit.com
-
+![scr](https://github.com/azdrenymeri/azdrenymeri.github.io/blob/master/images/read-it.JPG)
 ### Technologies used
 * FrontEnd: jQuery, Boostrap, FontAwesome
 * BackEnd: Ruby on Rails
