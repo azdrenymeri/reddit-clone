@@ -67,4 +67,47 @@ puts 'Running database seed'
 
 @movies_subreddit.save()
 
+@books_subreddit = SubReddit.new(
+    user: @user1,
+    title: 'Books',
+    description: 'Share your books, rate other books, everyting about reading'
+)
+
+@books_subreddit.background_picture.attach(
+    io: File.open(Rails.root.join('public/images/books.jpg')),
+    filename: 'books.jpg',
+    content_type: 'image/jpeg'
+    )
+
+@books_subreddit.save()
+
+@gaming_subreddit = SubReddit.new(
+    user: @user2,
+    title: 'Gaming',
+    description: 'This is a gaming zone disscussions'
+)
+
+@gaming_subreddit.background_picture.attach(
+    io: File.open(Rails.root.join('public/images/games.jpg')),
+    filename:'games.jpg',
+    content_type: 'image/jpeg'
+)
+
+@gaming_subreddit.save()
+
+@futorology_subreddit = SubReddit.new(
+    user: @user2,
+    title: 'Future(s) Studies',
+    description: 'a subreddit devoted to the field of Future(s) Studies and speculation about the development of humanity, technology, and civilization.'
+)
+
+@futorology_subreddit.background_picture.attach(
+    io: File.open(Rails.root.join('public/images/futorology.jpg')),
+    filename:'futorology.jpg',
+    content_type: 'image/jpeg'
+)
+@futorology_subreddit.save()
+
+# Posts
+
 puts 'Done...'
