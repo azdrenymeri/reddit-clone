@@ -18,7 +18,6 @@
           <% SubReddit.all.each do |sub_reddit| %>
 
             <%= link_to sub_reddit_path(sub_reddit), class:'dropdown-item' do %>
-              
                 <%= sub_reddit.title %>          
             <% end %>
           <% end %>

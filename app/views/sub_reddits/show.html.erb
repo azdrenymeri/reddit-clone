@@ -1,12 +1,14 @@
 <div class="row m-3">
+
         <div class="card">
-        <% if @sub_reddit.background_picture.attached? %>
-            <%= image_tag @sub_reddit.background_picture, class:'card-img-top h-25 no-stretch', alt:'subreddit picture' %>
-        <% end %>
+        
+         <% if @sub_reddit.background_picture.attached? %>
+            <%=  image_tag @sub_reddit.background_picture, class:'card-img-top h-25 no-stretch', alt:'subreddit picture' %>
+         <% end %>
+      
       <div class="card-body">
         <h5 class="card-title"><%= @sub_reddit.title %></h5>
         <p class="card-text"><%= @sub_reddit.description %></p>
-
         <hr />
         <%= render partial: 'shared/posts/post_form', object:@post %>
       </div>

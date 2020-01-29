@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 puts 'Running database seed'
 
 # Users
@@ -23,7 +25,6 @@ puts 'Running database seed'
 
 @user1.save()
 
-
 @user2 = User.new(email: 'john@example.com',
             password: '123456',
             full_name: 'John Doe',
@@ -37,6 +38,22 @@ puts 'Running database seed'
 )
 
 @user2.save()
+
+@user3 = User.new(
+    email: 'janed@gmail.com',
+    password: '123456',
+    full_name: 'Janed Doe',
+    bio: 'Animal lover',
+    birth_date: Date.new(1990, 12,12)
+)
+
+@user3.picture.attach(
+    io: File.open('public/images/janed.jpg'),
+    filename: 'john.jpg',
+    content_type: 'image/jpeg'
+)
+
+@user3.save
 
 # Subreddits
 @programming_subreddit = SubReddit.new(
@@ -93,7 +110,7 @@ puts 'Running database seed'
     content_type: 'image/jpeg'
 )
 
-@gaming_subreddit.save()
+@gaming_subreddit.save
 
 @futorology_subreddit = SubReddit.new(
     user: @user2,
@@ -106,8 +123,71 @@ puts 'Running database seed'
     filename:'futorology.jpg',
     content_type: 'image/jpeg'
 )
-@futorology_subreddit.save()
+@futorology_subreddit.save
+
+@ask_science_subreddit = SubReddit.new(
+    user: @user1,
+    title: 'AskScience',
+    description: 'Got Questions? Get Answers.'
+)
+
+@ask_science_subreddit.background_picture.attach(
+    io: File.open(Rails.root.join('public/images/science.jpg')),
+    filename: 'science.jpg',
+    content_type: 'image/jpeg'
+)
+
+@ask_science_subreddit.save
+
+@elif_subreddit = SubReddit.new(
+    user: @user2,
+    title: 'Explain it like I\'m five',
+    description: 'Ask any questions and get a detailed anwer'
+)
+
+@elif_subreddit.background_picture.attach(
+    io: File.open(Rails.root.join('public/images/elif.jpg')),
+    filename: 'elif.jpg',
+    content_type: 'image/jpeg'
+)
+
+@elif_subreddit.save
 
 # Posts
+Post.create(
+    sub_reddit: @programming_subreddit,
+    user: @user2,
+    title: 'Tabs Vs Spaces',
+    content: 'During your daily job, do you use tabs or spaces'
+)
+
+Post.create(
+    sub_reddit: @programming_subreddit,
+    user: @user1,
+    title: 'Your favourite programming language',
+    content: 'Tell me your favourite language and why you choose it'
+)
+
+Post.create(
+    sub_reddit: @programming_subreddit,
+    user: @user3,
+    title: 'How to split a string in java',
+    content: 'I have a name variable where the user is typing its name. I want to seperate first name from last name.'
+)
+
+Post.create(
+    sub_reddit: @programming_subreddit,
+    user: @user1,
+    title: 'Java vs C#',
+    content: 'Tell me which language is best and why ?'
+)
+
+5.times do |time| 
+    Post.create(
+     sub_reddit: @programming_subreddit,
+     user: @user1,
+     title:
+    )
+end
 
 puts 'Done...'
