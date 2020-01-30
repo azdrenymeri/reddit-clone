@@ -1,16 +1,20 @@
-<div class="row m-3">
+<!-- backgorund -->
+<div>
+  <% if @sub_reddit.background_picture.attached? %>
 
-        <div class="card">
-        
-         <% if @sub_reddit.background_picture.attached? %>
-            <%=  image_tag @sub_reddit.background_picture, class:'card-img-top h-25 no-stretch', alt:'subreddit picture' %>
-         <% end %>
-      
-      <div class="card-body">
-        <h5 class="card-title"><%= @sub_reddit.title %></h5>
-        <p class="card-text"><%= @sub_reddit.description %></p>
-        <hr />
-        <%= render partial: 'shared/posts/post_form', object:@post %>
-      </div>
-    </div>
+  <%=  image_tag @sub_reddit.background_picture, 
+  class:'backgroung-img', alt:'subreddit picture' %>
+
+<% end %>
+
+</div>
+<div class="row m-3">
+  <h2 class="card-title shift-down-spacer"><%= @sub_reddit.title %>
+    
+    <button type="button" class="btn btn-sm btn-outline-primary">Join</button>
+  </h2>
+
+</div>
+<div class="row">
+  
 </div>

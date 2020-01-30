@@ -55,6 +55,37 @@ puts 'Running database seed'
 
 @user3.save
 
+# Generating random users
+# trying to fix the file from flickr
+# TODO try to generate random images
+#       from a third-party image api
+ 17.times do
+    @usr = User.new(
+        email: Faker::Internet.email,
+        password: '123456',
+        full_name: Faker::Name.name,
+        bio:Faker::Quote.famous_last_words,
+        birth_date: Date.new(1980,1,1)
+        )
+    
+    # url = Faker::LoremFlickr.image 
+    # uriFile = URI.open(url)
+    # fn = File.basename(URI.parse(url).path)
+    
+    # puts "url: #{url}"
+    # puts "uri: #{uriFile.path}"
+    # puts "path: #{fn}"
+
+    @usr.picture.attach(
+        io: File.open(Rails.root.join('public/images/man.png')),
+        filename: 'man.png',
+        content_type: 'image/png'
+        )
+
+    @usr.save
+end
+
+
 # Subreddits
 @programming_subreddit = SubReddit.new(
     user: @user1,
@@ -182,11 +213,12 @@ Post.create(
     content: 'Tell me which language is best and why ?'
 )
 
-5.times do |time| 
+20.times do |time| 
     Post.create(
      sub_reddit: @programming_subreddit,
-     user: @user1,
-     title:
+     user: User.find(rand(1..20)),
+     title: Faker::Lorem.word, 
+     content: Faker::Lorem.sentence
     )
 end
 

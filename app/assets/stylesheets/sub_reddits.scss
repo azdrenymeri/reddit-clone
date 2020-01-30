@@ -27,6 +27,20 @@
   margin-top: -1.75rem;
 }
 
-.no-stretch {
+.backgroung-img {
+  position: absolute;
+  height: 9rem !important;
+  height: 10rem;
+  width: 100%;
+  left: 0;
+  right: 0;
   object-fit: cover;
+}
+
+.shift-down-spacer {
+  margin-top: 10rem !important;
+  width: 100%;
+}
+.mt-6 {
+  margin-top: 4rem !important;
 }
