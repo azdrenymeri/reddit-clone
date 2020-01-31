@@ -1,4 +1,4 @@
-namespace :data do
+namespace :db do
   desc 'Drops the database,recreate it, runs migrations and seeds.rb'
  
   task re_create: :environment do

@@ -13,11 +13,13 @@ Rails.application.routes.draw do
     get 'users/profile/:id', to: 'users#show', as: 'users_profile'
     get 'users/sign_up/file', to:'registrations#file', as:'registrations_file'
   end
+   get '/hello', to:'posts#hello', as:'posts_hello'
 
   resources :users
 
   resources :sub_reddits do
      resources :posts do
+
       resources :comments
        
      end
