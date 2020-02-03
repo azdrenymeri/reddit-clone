@@ -26,13 +26,7 @@ class PostsController < ApplicationController
       render plain: @newPost.errors.full_messages
     end
   end
-
-  def hello 
-    respond_to do |format| 
-      format.js
-    end
-  end
-
+  
   private
 
   def post_params

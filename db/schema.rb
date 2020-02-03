@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_155952) do
+ActiveRecord::Schema.define(version: 2020_01_31_164857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,18 @@ ActiveRecord::Schema.define(version: 2020_01_29_155952) do
     t.index ["user_id"], name: "index_sub_reddits_on_user_id"
   end
 
+  create_table "user_sub_reddits", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "sub_reddit_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index "GREATEST(user_id, sub_reddit_id), LEAST(user_id, sub_reddit_id)", name: "index_user_sub_reddits_on_interchangable_user_id_and_sub_reddit", unique: true
+    t.index "LEAST(user_id, sub_reddit_id), GREATEST(user_id, sub_reddit_id)", name: "index_user_sub_reddits_on_interchangable_sub_reddit_id_and_user", unique: true
+    t.index ["sub_reddit_id"], name: "index_user_sub_reddits_on_sub_reddit_id"
+    t.index ["user_id"], name: "index_user_sub_reddits_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -89,4 +101,6 @@ ActiveRecord::Schema.define(version: 2020_01_29_155952) do
   add_foreign_key "posts", "sub_reddits"
   add_foreign_key "posts", "users"
   add_foreign_key "sub_reddits", "users"
+  add_foreign_key "user_sub_reddits", "sub_reddits"
+  add_foreign_key "user_sub_reddits", "users"
 end

@@ -30,6 +30,19 @@ class SubRedditsController < ApplicationController
     end
   end
 
+  def join
+    usr =  UserSubReddit.new(
+      user: current_user,
+      sub_reddit_id: params[:sub_reddit_id],
+      status: UserSubReddit.statuses[:pending])
+    
+    if usr.save
+      render plain:'Joined successfully
+    else 
+      render plain: 'There was an error'
+    end
+  end
+
   private
   def sub_reddit_params
     params.require(:sub_reddit).permit(:title, :description, :background_picture)

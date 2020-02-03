@@ -10,11 +10,9 @@
 </div>
 <div class="row m-3">
   <h2 class="card-title shift-down-spacer"><%= @sub_reddit.title %>
-    
-    <button type="button" class="btn btn-sm btn-outline-info">Join</button>
-
-  </h2>
-	 <%= link_to("Hello", posts_hello_path , remote:true) %> 
+    <!-- <button type="button" class="btn btn-sm btn-outline-info">Join</button> -->
+    <%= link_to("Join", sub_reddit_join_path(@sub_reddit),method:'POST', class:'btn btn-sm btn-outline-info') %>
+  </h2> 
 </div>
 <div class="row">
   

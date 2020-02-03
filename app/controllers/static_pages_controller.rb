@@ -7,6 +7,6 @@ class StaticPagesController < ApplicationController
     end
     
     def main
-        @sub_reddits = SubReddit.all
+        @posts = current_user.posts
     end
 end
