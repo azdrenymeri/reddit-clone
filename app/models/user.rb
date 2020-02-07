@@ -17,7 +17,9 @@ class User < ApplicationRecord
   validates :picture, presence: true
 
   def posts
-    Post.where(sub_reddit_id: self.communities.pluck(:id))
+    ids = self.user_sub_reddits.where(status: UserSubReddit.statuses[:accepted]).pluck(:sub_reddit_id)
+
+    Post.where(sub_reddit_id: ids)
         .limit(50)
         .order(:created_at)
         .reverse

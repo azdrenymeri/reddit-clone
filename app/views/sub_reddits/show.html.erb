@@ -9,7 +9,6 @@
 <div class="row m-3">
   <h2 class="card-title shift-down-spacer">
   	<%= @sub_reddit.title %>
-
   	<% unless @status == nil  %>
 			<% if @status == 'accepted' %>
 				<%= link_to("Leave Community", sub_reddit_leave_path(@sub_reddit),method:'POST', class:'btn btn-sm btn-outline-danger') %>
@@ -19,12 +18,15 @@
 			<%= link_to("Cancel Request", sub_reddit_leave_path(@sub_reddit),method:'POST', class:'btn btn-sm btn-outline-warning')  %>
 			<% end %>
 		<% else %>
-
 	<%= link_to("Join", sub_reddit_join_path(@sub_reddit),method:'POST', class:'btn btn-sm btn-outline-info') %>	
-
   	<% end %>
   </h2> 
 </div>
 <div class="row">
-  
+  <div class="col-md-9">
+	Post form here
+  </div>
+  <div class="col-md-3">
+	Subreddit details here
+  </div>
 </div>

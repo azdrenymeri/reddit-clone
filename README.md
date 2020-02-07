@@ -15,6 +15,7 @@
 * Login
 * Signup
 * Create a subreddit
+* Join a subreddit
 * Post on a subreddit
 * Comment on a post
 * New features comming soon

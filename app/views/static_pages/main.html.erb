@@ -1,10 +1,14 @@
   <div class="row">
-    <div class="col-md-9" style="padding-left: 0px;">
+    <div class="col-md-9 mt-3" style="padding-left: 0px;">
+      <% if @posts.size > 0 %>
         <% @posts.each do |post| %>
         <%= render partial:'shared/posts/post_card', locals: {post:post} %>
         <% end %>
+        <% else %>
+          <p class="text-muted m-2"> No posts,start joining some subreddits </p>
+        <% end %>
     </div>
-    <div class="col-md-3" style="padding-left: 0px;">
+    <div class="col-md-3 mt-3" style="padding-left: 0px;">
         <div class="card bg-light mb-3">
   <div class="card-header">Top Communities</div>
   <div class="card-body">

@@ -11,7 +11,6 @@ class SubReddit < ApplicationRecord
   has_many :members, through: :user_sub_reddits, :source  => :user
 
 
-
   #  returns the join status of the user
   #  accepted pending or blocked
   def current_user_joined(usr)

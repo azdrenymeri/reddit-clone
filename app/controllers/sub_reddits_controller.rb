@@ -42,8 +42,8 @@ class SubRedditsController < ApplicationController
       flash[:success] = 'Joined successfully'
       render :show
     else 
-      flash[:danger]
-      render plain: 'There was an error'
+      flash[:danger] = 'There was a problem'
+      render :show
     end
   end
 

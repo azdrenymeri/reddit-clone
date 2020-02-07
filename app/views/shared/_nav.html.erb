@@ -14,7 +14,11 @@
          <i class="fas fa-home"></i> Home
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item dropdown-header" href="#"><i class="fas fa-home"></i> Home</a>
+            
+            <%= link_to root_path,class:'dropdown-item dropdown-header' do  %>
+            <i class="fas fa-home"></i> Home
+            <% end %>
+
           <% SubReddit.all.each do |sub_reddit| %>
 
             <%= link_to sub_reddit_path(sub_reddit), class:'dropdown-item' do %>

@@ -213,14 +213,12 @@ Post.create(
     content: 'Tell me which language is best and why ?'
 )
 
-20.times do |time| 
-    Post.create(
-     sub_reddit: @books_subreddit,
-     user: User.find(rand(1..20)),
-     title: Faker::Lorem.word, 
-     content: Faker::Lorem.sentence
-    )
-end
+Post.create(
+    sub_reddit: @books_subreddit,
+    user: @user1,
+    title: 'Weekly reading report',
+    content: 'Tell me what have you been reading this week'
+)
 
 
 # Creating data for the join feature of sub_reddits
@@ -231,18 +229,18 @@ end
 UserSubReddit.create(
     user: @user1,
     sub_reddit: @programming_subreddit,
-    status: UserSubReddit.statuses[:pending]
-)
-
-UserSubReddit.create(
-    user: @user1,
-    sub_reddit: @movies_subreddit,
     status: UserSubReddit.statuses[:accepted]
 )
 
 UserSubReddit.create(
     user: @user1,
     sub_reddit: @books_subreddit,
+    status: UserSubReddit.statuses[:accepted]
+)
+
+UserSubReddit.create(
+    user: @user1,
+    sub_reddit: @gaming_subreddit,
     status: UserSubReddit.statuses[:pending]
 )
 
