@@ -13,7 +13,9 @@ class SubRedditsController < ApplicationController
   def show
     @sub_reddit = SubReddit.find(params[:id])
     @post = Post.new
+    @status = @sub_reddit.current_user_joined(current_user)
   end
+
   def edit
     @sub_reddit = SubReddit.find(params[:id])
     
@@ -37,9 +39,23 @@ class SubRedditsController < ApplicationController
       status: UserSubReddit.statuses[:pending])
     
     if usr.save
-      render plain:'Joined successfully
+      flash[:success] = 'Joined successfully'
+      render :show
     else 
+      flash[:danger]
       render plain: 'There was an error'
+    end
+  end
+
+  def leave 
+    usr = UserSubReddit.where(user: current_user,sub_reddit_id: params[:sub_reddit_id]).first
+
+    if UserSubReddit.destroy(usr.id)
+      flash[:success] = 'You left this subreddit'
+      redirect_to sub_reddit_path(params[:sub_reddit_id])
+    else
+      flash[:danger] = 'There was a problem'
+      render :show
     end
   end
 

@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
   resources :sub_reddits do
 
-     post '/join', to:'sub_reddits#join', as:'join'    
+     post '/join', to:'sub_reddits#join', as:'join'
+     post '/leave', to:'sub_reddits#leave', as:'leave'    
      resources :posts do
 
       resources :comments

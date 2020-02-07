@@ -15,7 +15,7 @@
     <%= render 'shared/nav' %>
     <div class="container mt-6">
       <% flash.each do |key, value| %>
-      <div class="m-3 alert alert-secondary alert-<%= key %>" role="alert">
+      <div class="m-3 mod-alert alert alert-<%= key %>" role="alert" style="position: absolute; z-index: 1;">
             <%= value %>
         </div>
       <% end %>

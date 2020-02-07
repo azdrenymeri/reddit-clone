@@ -68,6 +68,15 @@ float: clear;
    display: none;
 }
 
+.mod-alert {
+  position: absolute;
+  z-index: 1;
+  margin: 1rem auto !important;
+  left: 10rem;
+  right: 10rem;
+  opacity: 0.9;
+}
+
 //  ServerSide error handling
 #error_explanation {
    color: #721c24;

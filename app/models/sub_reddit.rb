@@ -9,4 +9,17 @@ class SubReddit < ApplicationRecord
 
   has_many :user_sub_reddits
   has_many :members, through: :user_sub_reddits, :source  => :user
+
+
+
+  #  returns the join status of the user
+  #  accepted pending or blocked
+  def current_user_joined(usr)
+    found = nil
+    begin
+     found = self.user_sub_reddits.where(user_id: usr.id).first.status  
+    rescue Exception => e
+    end
+  	found
+  end
 end

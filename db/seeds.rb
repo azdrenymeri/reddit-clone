@@ -215,11 +215,35 @@ Post.create(
 
 20.times do |time| 
     Post.create(
-     sub_reddit: @programming_subreddit,
+     sub_reddit: @books_subreddit,
      user: User.find(rand(1..20)),
      title: Faker::Lorem.word, 
      content: Faker::Lorem.sentence
     )
 end
+
+
+# Creating data for the join feature of sub_reddits
+
+# first user joined programming sub_reddit
+#  and the  join request is pending
+
+UserSubReddit.create(
+    user: @user1,
+    sub_reddit: @programming_subreddit,
+    status: UserSubReddit.statuses[:pending]
+)
+
+UserSubReddit.create(
+    user: @user1,
+    sub_reddit: @movies_subreddit,
+    status: UserSubReddit.statuses[:accepted]
+)
+
+UserSubReddit.create(
+    user: @user1,
+    sub_reddit: @books_subreddit,
+    status: UserSubReddit.statuses[:pending]
+)
 
 puts 'Done...'
