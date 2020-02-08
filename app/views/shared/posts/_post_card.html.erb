@@ -1,10 +1,21 @@
 <div class="card m-1">
   <div class="card-body">
-    <h5 class="card-title"> 
+  	
+  	 <%= image_tag(post.sub_reddit.background_picture,
+  	 	 class:'sub-reddit-icon') %> 
+  	<span class="card-subtitle mb-2 text-muted"> 
+  		<%= link_to('r/'+post.sub_reddit.title, 
+  		sub_reddit_path(post.sub_reddit.id),class:'text-muted top-text') %> 
+  	</span>
+	<span class=" text-muted top-text">
+		. Posted by <%= link_to(post.user.full_name,users_profile_path(post.user.id), class:'text-muted top-text')  %>
+	</span>
+	<span class="text-muted top-text">
+		<%= time_ago_in_words(post.created_at)+' ago' %>
+	</span>
+    <h5 class="card-title mt-2"> 
     	<%= post.title %>  
-    	<span class="card-subtitle mb-2 text-muted" style="font-size: 0.9rem"> r/<%= post.sub_reddit.title %> </span>
     </h5>  
     <p class="card-text"> <%= post.content %> </p>
-    <span class="card-link" style="font-size: 0.95rem;font-style: italic;"><%= time_ago_in_words(post.created_at) %> </span>
   </div>
 </div>
