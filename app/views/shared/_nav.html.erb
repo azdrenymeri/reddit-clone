@@ -45,14 +45,14 @@
            <%= current_user.full_name %>
          </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to edit_user_registration_path, class:"dropdown-item" do  %>
+          <%= link_to edit_user_registration_path, class:"dropdown-item text-muted" do  %>
            <i class="fas fa-user-circle"></i> Profile 
           <% end %>
-          <%= link_to new_sub_reddit_path,class:"dropdown-item" do %>
+          <%= link_to new_sub_reddit_path,class:"dropdown-item text-muted" do %>
           <i class="fab fa-reddit-alien"></i> Create a SubReddit
           <% end %>
           <div class="dropdown-divider"></div>
-          <%= link_to destroy_user_session_path,method:"DELETE",class:"dropdown-item" do %>
+          <%= link_to destroy_user_session_path,method:"DELETE",class:"dropdown-item text-muted" do %>
           <i class="fas fa-sign-out-alt"></i> Sign Out
           <% end %>
         </div>

@@ -14,3 +14,18 @@
 .top-text {
 	font-size: 0.75rem;
 }
+.footer-mod {
+	background-color: white !important;
+    border-top: none !important;
+}
+.text-bottom {
+	font-size: 0.95rem;
+}
+.link-mod{
+	color: var(--dark);
+	text-decoration: none;
+}
+.link-mod:hover {
+	color: var(--gray);
+	text-decoration: none;
+}

@@ -13,9 +13,23 @@
 	<span class="text-muted top-text">
 		<%= time_ago_in_words(post.created_at)+' ago' %>
 	</span>
-    <h5 class="card-title mt-2"> 
-    	<%= post.title %>  
+    <h5 class="card-title mt-2">
+    <%= link_to(post.title,sub_reddit_post_path(
+      sub_reddit_id: post.sub_reddit.id,
+      id: post.id) , class:'link-mod') %> 
     </h5>  
     <p class="card-text"> <%= post.content %> </p>
+  </div>
+  <div class="card-footer p-1 footer-mod" style="padding-left: 1.25rem !important;">
+
+    <div class="text-muted text-bottom">
+      
+      <%= 
+      link_to sub_reddit_post_path(
+      sub_reddit_id: post.sub_reddit.id,
+      id: post.id),class:'text-muted' do  %> 
+      <i class="far fa-comment-alt"></i> 
+      <%= post.comments.count  %> Comments</div>
+      <% end %>
   </div>
 </div>
