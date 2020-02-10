@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :sub_reddit
+  belongs_to :sub_reddit, counter_cache: true
   belongs_to :user
   has_many :comments
 

@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header community-background-img" style="background:url(<%= url_for(top_communities.first.background_picture)  %>); ">
+    Top Communities
+  </div>
+
+  <ul class="list-group list-group-flush">
+  	<% top_communities.each do |sub_reddit| %>
+    <li class="list-group-item">
+    <%= image_tag(sub_reddit.background_picture,
+       class:'community-icon') %> 
+     <%= sub_reddit.title %> 
+    </li>
+    <% end %>
+  </ul>
+   <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>

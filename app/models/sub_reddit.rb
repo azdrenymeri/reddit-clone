@@ -11,6 +11,7 @@ class SubReddit < ApplicationRecord
   has_many :members, through: :user_sub_reddits, :source  => :user
 
 
+  
   #  returns the join status of the user
   #  accepted pending or blocked
   def current_user_joined(usr)
@@ -20,5 +21,12 @@ class SubReddit < ApplicationRecord
     rescue Exception => e
     end
   	found
+  end
+
+
+  # returns top five communities based on
+  # number of posts
+  def self.todays_top_five
+     SubReddit.order('posts_count').limit(5)
   end
 end

@@ -36,14 +36,14 @@ class SubRedditsController < ApplicationController
     usr =  UserSubReddit.new(
       user: current_user,
       sub_reddit_id: params[:sub_reddit_id],
-      status: UserSubReddit.statuses[:pending])
+      status: UserSubReddit.statuses[:accepted])
     
     if usr.save
       flash[:success] = 'Joined successfully'
-      render :show
+      redirect_to sub_reddit_path(params[:sub_reddit_id])
     else 
       flash[:danger] = 'There was a problem'
-      render :show
+      redirect_to sub_reddit_path(params[:sub_reddit_id])
     end
   end
 
@@ -55,7 +55,7 @@ class SubRedditsController < ApplicationController
       redirect_to sub_reddit_path(params[:sub_reddit_id])
     else
       flash[:danger] = 'There was a problem'
-      render :show
+      redirect_to sub_reddit_path(params[:sub_reddit_id])
     end
   end
 
