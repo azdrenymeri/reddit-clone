@@ -1,3 +1,36 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// top communities
+.community-icon {
+    border-radius: 7px;
+    height: 24px;
+    width: 24px;
+    object-fit: cover;
+}
+
+.communtiy-link {
+
+}
+.communtiy-link:hover{
+  text-decoration: none;
+};
+
+.community-background-img {
+  color: white;
+  font-weight: bold;
+  background-repeat: no-repeat !important;
+  background-size: auto ;
+  background-size: cover !important;
+  padding-bottom: 0.5rem !important;
+  padding-top:  2rem !important;
+}
+
+.top-community-item {
+	color: var(--gray-dark) 
+}
+
+.top-community-item:hover {
+  color: var(--secondary);
+}

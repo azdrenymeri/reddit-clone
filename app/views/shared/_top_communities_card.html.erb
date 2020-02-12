@@ -6,14 +6,17 @@
   <ul class="list-group list-group-flush">
   	<% top_communities.each do |sub_reddit| %>
     <li class="list-group-item">
+    <%= link_to sub_reddit_path(sub_reddit.id),class:'communtiy-link' do  %>
     <%= image_tag(sub_reddit.background_picture,
        class:'community-icon') %> 
-     <%= sub_reddit.title %> 
+    <% end %>
+
+       <%= link_to sub_reddit.title, sub_reddit_path(sub_reddit.id), class:'top-community-item' %> 
+    
     </li>
     <% end %>
   </ul>
    <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <%= link_to("View All", sub_reddits_path , class:'btn btn-primary',style:'display:block;') %>
   </div>
 </div>
