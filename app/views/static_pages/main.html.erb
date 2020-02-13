@@ -3,7 +3,7 @@
       <% if @posts.size > 0 %>
         
         <% @posts.each do |post| %>
-        <%= render partial:'shared/posts/post_card', locals: {post:post} %>
+        <%= render partial:'shared/posts/post_card', locals: {post:post,top:true} %>
         <% end %>
         
       <% else %>

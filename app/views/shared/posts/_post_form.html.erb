@@ -1,1 +1,9 @@
 <h1>Post Form </h1>
+<%= form_with(url: sub_reddit_posts_url,validation:true) do |f| %>
+	<div class="form-group">
+        <%= f.label :title %><br />
+        <div class="control">
+          <%= f.text_field :title, autofocus: true, autocomplete: "email",class:"form-control" %>
+        </div>
+     </div>
+<% end %>

@@ -24,9 +24,42 @@
 </div>
 <div class="row">
   <div class="col-md-9">
-	Post form here
+    <!-- post form -->
+	 <%= form_with(path: sub_reddit_posts_path(sub_reddit_id: @sub_reddit.id),validation:true,class:'p-3') do |f| %>
+  <div class="form-group">
+        <%= f.label :title %><br />
+        <div class="control">
+          <%= f.text_field :title, autofocus: true, autocomplete: "email",class:"form-control" %>
+        </div>
   </div>
-  <div class="col-md-3">
-	Subreddit details here
+  <div class="form-group">
+      <%= f.label :content %><br />
+      <%= f.text_area :content,rows:3,class:'form-control' %>
   </div>
+  <%= f.submit "Post",class:"btn btn-outline-primary"  %>
+<% end %>
+  <!-- posts list -->
+  <div>
+      <% @sub_reddit.posts.each do |post| %>
+        <%= render partial:'shared/posts/post_card', locals: {post:post,top:false} %>
+      <% end %>
+  </div>
+
+
+  </div>
+  <!-- post details -->
+  
+  <div class="col-md-3 pl-0 pr-0">
+    <div class="card">
+  <div class="card-header">
+    About This Community
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+  </div>
+ 
 </div>
