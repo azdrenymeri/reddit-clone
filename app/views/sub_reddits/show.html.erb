@@ -25,7 +25,9 @@
 <div class="row">
   <div class="col-md-9">
     <!-- post form -->
-	 <%= form_with(path: sub_reddit_posts_path(sub_reddit_id: @sub_reddit.id),validation:true,class:'p-3') do |f| %>
+    <div class="card m-1" style="background-color: rgba(0, 0, 0, 0.03);">
+      <div class="card-body">
+             <%= form_with(path: sub_reddit_posts_path(sub_reddit_id: @sub_reddit.id),validation:true,class:'p-3') do |f| %>
   <div class="form-group">
         <%= f.label :title %><br />
         <div class="control">
@@ -37,7 +39,10 @@
       <%= f.text_area :content,rows:3,class:'form-control' %>
   </div>
   <%= f.submit "Post",class:"btn btn-outline-primary"  %>
-<% end %>
+<% end %>      
+      </div>
+    </div>
+  <br/>
   <!-- posts list -->
   <div>
       <% @sub_reddit.posts.each do |post| %>
@@ -49,7 +54,7 @@
   </div>
   <!-- post details -->
   
-  <div class="col-md-3 pl-0 pr-0">
+  <div class="col-md-3 pl-0 pr-0 mt-1">
     <div class="card">
   <div class="card-header">
     About This Community
@@ -71,7 +76,7 @@
         </div>
       </div>
       <div class="col-md-4" >
-        <div class="seperator">
+        
           <div class="text-muted" style="font-size: 0.70rem; font-weight: bold; text-align: center;">
              <i class="fas fa-list-alt"></i>
              <div>POSTS</div>
@@ -81,7 +86,7 @@
             <%= @sub_reddit.posts.size %>
           </div>
                   
-        </div>
+        
       </div>
       <div class="col-md-4 pl-0">
         <div class="text-muted" style="font-size: 0.70rem; font-weight: bold; text-align: center;">
@@ -93,7 +98,7 @@
         </div>
       </div>
     </div>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
   </div>
 </div>
   </div>
