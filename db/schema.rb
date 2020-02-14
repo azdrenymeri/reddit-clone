@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_112209) do
+ActiveRecord::Schema.define(version: 2020_02_14_113140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_112209) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "sub_reddit_id"
+    t.integer "comments_count"
     t.index ["sub_reddit_id"], name: "index_posts_on_sub_reddit_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

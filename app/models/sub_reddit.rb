@@ -29,4 +29,15 @@ class SubReddit < ApplicationRecord
   def self.todays_top_five
      SubReddit.order('posts_count').limit(5)
   end
+
+
+  def comments_count
+
+    posts = self.posts
+    count = 0
+    posts.each do |post|
+      count += post.comments.size
+    end
+    count
+  end
 end

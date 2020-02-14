@@ -55,8 +55,44 @@
     About This Community
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <!-- <h5 class="card-title">Special title treatment</h5> -->
+    <p class="card-text"> <%= @sub_reddit.description %> </p>
+    <div class="row mt-2 mb-2">
+      <div class="col-md-4">
+        <div class="text-muted" style="font-size: 0.70rem; font-weight: bold; text-align: center;">
+          <i class="fas fa-users"></i>
+          <div>
+          MEMBERS  
+          </div>
+          
+        </div>
+        <div style="text-align: center;">
+          <%= @sub_reddit.members.size %>
+        </div>
+      </div>
+      <div class="col-md-4" >
+        <div class="seperator">
+          <div class="text-muted" style="font-size: 0.70rem; font-weight: bold; text-align: center;">
+             <i class="fas fa-list-alt"></i>
+             <div>POSTS</div>
+               
+          </div>
+          <div style="text-align: center;">
+            <%= @sub_reddit.posts.size %>
+          </div>
+                  
+        </div>
+      </div>
+      <div class="col-md-4 pl-0">
+        <div class="text-muted" style="font-size: 0.70rem; font-weight: bold; text-align: center;">
+          <i class="far fa-comment-alt"></i>
+          COMMENTS
+        </div>
+        <div style="text-align: center;">
+          <%= @sub_reddit.comments_count %>
+        </div>
+      </div>
+    </div>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>

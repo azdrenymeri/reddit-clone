@@ -4,6 +4,5 @@ FactoryBot.define do
     user { create(:user) }
     title { "Post Title" }
     content { "This is the content of the post" }
-    image { "No Image" }
   end
 end
