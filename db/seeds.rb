@@ -220,6 +220,56 @@ Post.create(
     content: 'Tell me what have you been reading this week'
 )
 
+Post.create(
+    sub_reddit: @programming_subreddit,
+    user: @user2,
+    title: 'This is a fairly long post',
+    content:'Bacon ipsum dolor amet tongue strip steak chislic meatloaf t-bone cupim.'+
+             'Pork chop pastrami burgdoggen, short loin boudin frankfurter tongue filet '+
+             'mignon tenderloin shoulder jowl flank brisket. Ham hock jerky chicken, kevin '+
+             'flank beef ribs pork venison t-bone ball tip fatback andouille shoulder. '+
+             'Fatback bacon shoulder tongue landjaeger chislic bresaola porchetta short '+
+             'ribs shank beef ribs pancetta biltong rump ham.')
+
+Post.create(
+    sub_reddit: @programming_subreddit,
+    user: @user2,
+    title: 'This is a decent one',
+    content:'Pork chop pastrami burgdoggen, short loin boudin frankfurter tongue filet '+
+            'mignon tenderloin shoulder jowl flank brisket. Ham hock jerky chicken, kevin '+
+            'flank beef ribs pork venison t-bone ball tip fatback andouille shoulder. '+
+            'Fatback bacon shoulder tongue landjaeger chislic bresaola porchetta short '+
+            'ribs shank beef ribs pancetta biltong rump ham.'+
+            'Pig cupim short loin landjaeger sausage chislic, pork porchetta frankfurter'+
+            'rump boudin strip steak tongue. Ground round tri-tip pork ham fatback picanha'+ 
+            'jerky kielbasa ribeye t-bone. Frankfurter leberkas andouille, short loin tail'+ 
+            'spare ribs alcatra. Leberkas turkey cow cupim, jerky salami spare ribs bacon'+ 
+            'pork chop brisket kevin drumstick. Tri-tip drumstick chicken picanha pancetta' +
+            'bacon pig sirloin capicola short ribs. Doner kevin flank chislic.'
+             )
+Post.create(
+    sub_reddit: @programming_subreddit,
+    user: @user2,
+    title: 'This is a huge post',
+    content:'Pork chop pastrami burgdoggen, short loin boudin frankfurter tongue filet '+
+            'mignon tenderloin shoulder jowl flank brisket. Ham hock jerky chicken, kevin '+
+            'flank beef ribs pork venison t-bone ball tip fatback andouille shoulder. '+
+            'Fatback bacon shoulder tongue landjaeger chislic bresaola porchetta short '+
+            'ribs shank beef ribs pancetta biltong rump ham.'+
+            'Pig cupim short loin landjaeger sausage chislic, pork porchetta frankfurter'+
+            'rump boudin strip steak tongue. Ground round tri-tip pork ham fatback picanha'+ 
+            'jerky kielbasa ribeye t-bone. Frankfurter leberkas andouille, short loin tail'+ 
+            'spare ribs alcatra. Leberkas turkey cow cupim, jerky salami spare ribs bacon'+ 
+            'pork chop brisket kevin drumstick. Tri-tip drumstick chicken picanha pancetta' +
+            'bacon pig sirloin capicola short ribs. Doner kevin flank chislic.'+
+            'Venison bacon tri-tip bresaola drumstick. Buffalo tenderloin pork belly shank'+ 
+            'porchetta, picanha corned beef beef ribs. Capicola tenderloin chislic pork, ham'+
+            'hock flank cow alcatra pork loin. Buffalo frankfurter hamburger andouille, sirloin'+
+            'beef ribs prosciutto meatball. Capicola jowl short ribs, ham turkey jerky bresaola'+ 
+            'shank spare ribs. Ground round cupim sirloin, pig boudin ham hock jerky chuck rump'+ 
+            'turkey pork belly pork chop flank.'
+    )
+
 
 # Creating data for the join feature of sub_reddits
 

@@ -24,4 +24,9 @@ class User < ApplicationRecord
         .order(:created_at)
         .reverse
   end
+
+  def joined_communities
+    ids = self.user_sub_reddits.where(status: UserSubReddit.statuses[:accepted]).pluck(:sub_reddit_id)
+    SubReddit.find(ids)
+  end
 end

@@ -19,7 +19,7 @@
             <i class="fas fa-home"></i> Home
             <% end %>
 
-          <% SubReddit.all.each do |sub_reddit| %>
+          <% current_user.joined_communities.each do |sub_reddit| %>
 
             <%= link_to sub_reddit_path(sub_reddit), class:'dropdown-item' do %>
                 <%= sub_reddit.title %>          

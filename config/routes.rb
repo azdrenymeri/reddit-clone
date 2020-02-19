@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'static_pages#main'
+  root to: 'static_pages#index'
   
   
   get '/wellcome', to: 'static_pages#index', as: 'static_pages_wellcome'

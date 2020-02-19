@@ -1,4 +1,12 @@
 <div class="row">
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed est, natus ratione nihil fuga! Exercitationem cumque fugit, amet animi consequuntur reprehenderit eos quam accusantium quasi pariatur vero, similique recusandae aliquid?
+	<p class="text-info">Work in progress</p>
 	
+	<% @subreddits.each do |sub|  %>
+	<div class="card">
+		<div class="card-title">
+			<%= sub.title %>	
+		</div>
+	</div>
+
+	<% end %>
 </div>
