@@ -8,6 +8,6 @@ class StaticPagesController < ApplicationController
     
     def main
         @posts = current_user.posts
-        @top_communities = SubReddit.todays_top_five
+        @top_communities = SubReddit.todays_top_ten
     end
 end

@@ -33,7 +33,7 @@
       sub_reddit_id: post.sub_reddit.id,
       id: post.id),class:'text-muted' do  %> 
       <i class="far fa-comment-alt"></i> 
-      <%= post.comments.count  %> Comments</div>
+      <%= count_format(post.comments.count)  %> Comments</div>
       <% end %>
   </div>
 </div>

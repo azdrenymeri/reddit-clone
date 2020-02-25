@@ -1,16 +1,22 @@
 <div class="container">
   <div class="columns">
     <div class="column is-9">
-      <article class="message is-primary">
+      <article class="message is-primary card">
+        <div class="card-body">
         <div class="message-header">
-          <p><%= @post.title %></p>
+          <h1><%= @post.title %></h1>
         </div>
         <div class="message-body">
           <%= @post.content %>
+        </div>  
         </div>
       </article>
-      <hr/>
-      <%= render 'shared/comment_form' %>
+      <div class="row mt-3">
+        <div class="col-md-8">
+          <%= render 'shared/comment_form' %>    
+        </div>
+      </div>
+      
       <hr />
       <% @post.comments.each do |comment| %>
         <article class="message message-margin">

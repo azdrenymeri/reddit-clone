@@ -1,11 +1,16 @@
+<div class="card">
+	<div class="card-header">
 <%= form_for @comment,url: sub_reddit_post_comments_path(post_id: params[:id]), method: 'post' do |f| %>
-  <div class="field">
+  <div class="form-group">
     <div class="control">
-      <%= f.label :content,'Comment' ,class: 'label'%>
+      <%= f.label :content,'Write a comment'%>
       <%= f.text_area :content,
-                class: 'textarea is-primary', 
+                class: 'form-control', 
                 placeholder: 'Write a comment' %>
     </div>
   </div>
-  <%= f.submit class:"button is-primary"%>
-<% end %>
+ <%= f.submit "Comment",class:"btn btn-outline-primary" %>
+<% end %>		
+
+	</div>
+</div>

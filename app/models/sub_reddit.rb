@@ -26,8 +26,8 @@ class SubReddit < ApplicationRecord
 
   # returns top five communities based on
   # number of posts
-  def self.todays_top_five
-     SubReddit.order('posts_count').limit(5)
+  def self.todays_top_ten
+     SubReddit.order('posts_count').limit(10)
   end
 
 
