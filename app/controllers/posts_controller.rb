@@ -16,10 +16,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @newPost = Post.new(post_params)
+    @newPost = Post.new(title: params[:title],
+                        content: params[:content],
+                        comments_count:0)
     @newPost.user_id = current_user.id
     @newPost.sub_reddit_id = params[:sub_reddit_id]
-
     if @newPost.save
       redirect_to sub_reddit_path(@newPost.sub_reddit_id)
     else

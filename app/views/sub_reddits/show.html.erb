@@ -1,10 +1,9 @@
-<!-- backgorund -->
+<!-- background -->
 <div>
   <% if @sub_reddit.background_picture.attached? %>
   <%=  image_tag @sub_reddit.background_picture, 
   class:'backgroung-img', alt:'subreddit picture' %>
 <% end %>
-
 </div>
 <div class="row m-3">
   <h2 class="card-title shift-down-spacer">
@@ -13,7 +12,6 @@
 			<% if @status == 'accepted' %>
 				<%= link_to("Leave Community", sub_reddit_leave_path(@sub_reddit),method:'POST', class:'btn btn-sm btn-outline-danger') %>
 			<% end %>
-
 			<% if @status == 'pending' %>
 			<%= link_to("Cancel Request", sub_reddit_leave_path(@sub_reddit),method:'POST', class:'btn btn-sm btn-outline-warning')  %>
 			<% end %>
@@ -24,10 +22,11 @@
 </div>
 <div class="row">
   <div class="col-md-9">
+
     <!-- post form -->
     <div class="card m-1" style="background-color: rgba(0, 0, 0, 0.03);">
       <div class="card-body">
-             <%= form_with(path: sub_reddit_posts_path(sub_reddit_id: @sub_reddit.id),validation:true,class:'p-3') do |f| %>
+             <%= form_with(url: sub_reddit_posts_url(sub_reddit_id: @sub_reddit.id), method:'POST', remote: false) do |f| %>
   <div class="form-group">
         <%= f.label :title %><br />
         <div class="control">
