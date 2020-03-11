@@ -21,10 +21,12 @@ class PostsController < ApplicationController
                         comments_count:0)
     @newPost.user_id = current_user.id
     @newPost.sub_reddit_id = params[:sub_reddit_id]
+    
     if @newPost.save
       redirect_to sub_reddit_path(@newPost.sub_reddit_id)
     else
-      render plain: @newPost.errors.full_messages
+      flash[:danger] = @newPost.errors.full_messages.join(', ')
+      redirect_to sub_reddit_path(@newPost.sub_reddit_id)
     end
   end
   

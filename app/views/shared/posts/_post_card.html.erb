@@ -8,7 +8,11 @@
       <%= link_to('r/'+post.sub_reddit.title, 
       sub_reddit_path(post.sub_reddit.id),class:'text-muted top-text') %> 
     </span>
-      
+     <% else %>
+     <%= link_to(users_profile_path(post.user.id),style:'text-decoration: none') do  %>
+    <%= image_tag(post.user.picture,
+       class:'sub-reddit-icon') %>
+       <% end %> 
   <% end %>  
 
 	<span class=" text-muted top-text">
